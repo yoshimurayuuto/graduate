@@ -5,6 +5,7 @@ ruby '2.6.5'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'delayed_job_active_record'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use postgresql as the database for Active Record

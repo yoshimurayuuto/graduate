@@ -1,0 +1,4 @@
+<% @shares.each do |share| %>
+  <p>やるべきこと: <%= share.action %></p>
+<% end %>
+<%= link_to "新規投稿", new_share_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  share: one
+  content: MyText
+
+two:
+  share: two
+  content: MyText

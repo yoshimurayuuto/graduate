@@ -6,6 +6,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'delayed_job_active_record'
+gem 'rails_admin'
+gem 'cancancan'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use postgresql as the database for Active Record
@@ -42,6 +44,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -53,6 +58,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "dotenv-rails"
   gem "letter_opener_web"
+  gem 'rails-erd'
 end
 
 group :test do

@@ -1,0 +1,14 @@
+
+<div class="container">
+  <p id="notice"></p>
+  <div>
+  <p>やるべきこと:<%= @share.action %></p>
+  </div>
+
+  <div id="comments_area">
+    <%= render partial: "comments/index", locals: {comments: @comments, share: @share} %>
+    <%= render partial: "comments/form", locals: {comment: @comment, share: @share} %>
+
+    <%= link_to "編集", edit_share_path(@share) %>
+    <%= link_to "戻る", shares_path %>
+  </div>

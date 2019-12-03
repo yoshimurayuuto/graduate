@@ -1,0 +1,3 @@
+
+$("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.share.comments, share: @comment.share }) %>")
+$("textarea").val('')

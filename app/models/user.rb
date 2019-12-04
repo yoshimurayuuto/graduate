@@ -22,7 +22,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, omniauth_providers: %i(google)
+       :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:twitter, :facebook, :google]
   
   def self.create_unique_string
     SecureRandom.uuid
@@ -34,11 +34,40 @@ class User < ApplicationRecord
     unless user
       user = User.new(email: auth.info.email,
                       provider: auth.provider,
+                      name: auth.info.name,
                       uid:      auth.uid,
                       password: Devise.friendly_token[0, 20],
                                    )
     end
+    user.skip_confirmation!
     user.save
     user
   end
+
+  class << self
+    def find_or_create_for_oauth(auth)
+      user = User.find_by(email: auth.info.email)
+  
+      unless user
+        user = User.new(email: auth.info.email,
+                        provider: auth.provider,
+                        name: auth.info.name,
+                        uid:      auth.uid,
+                        password: Devise.friendly_token[0, 20],
+                                    )
+      end
+      user.skip_confirmation!
+      user.save
+      user
+    end
+
+    def new_with_session(params, session)
+      if user_attributes = session['devise.user_attributes']
+        new(user_attributes) { |user| user.attributes = params }
+      else
+        super
+      end
+    end
+  end
+  
 end

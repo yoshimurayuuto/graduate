@@ -1,7 +1,7 @@
 ja:
   devise:
     confirmations:
-      confirmed: "アカウントの確認が成功しました。"
+      confirmed: "メールアドレスの認証が完了しました。ログインしてください。"
       send_instructions: "アカウントの確認方法をメールでご連絡します。"
       send_paranoid_instructions: "あなたのメールアドレスが登録済みの場合、アカウントの確認方法をメールでご連絡します。"
     failure:

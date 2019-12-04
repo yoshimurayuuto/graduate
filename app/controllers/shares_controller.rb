@@ -26,14 +26,20 @@ class SharesController < ApplicationController
 
   def edit;end
 
-   def update;end
+   def update
+    if @share.update(share_params)
+      redirect_to shares_path
+    else
+      render :edit
+    end
+  end
 
    def destroy;end
 
    private
 
    def share_params
-    params.require(:share).permit(:action)
+    params.require(:share).permit(:kindness)
    end
 
    def set_share

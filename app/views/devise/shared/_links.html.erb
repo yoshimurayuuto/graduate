@@ -1,5 +1,5 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "ログイン", new_session_path(resource_name) %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -11,15 +11,26 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "確認メールが届かなかった場合", new_confirmation_path(resource_name) %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+<div id="social-icon">
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <% if provider == :twitter %>
+          <i class="fa fa-twitter fa-lg"></i>
+          <%= link_to " #{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), :class => "god"%><br />
+        <% else if provider == :google %>
+          <i class="fa fa-google-plus fa-lg"></i>
+          <%= link_to " #{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), :class => "water" %><br />
+        <% else %>
+          <i class="fa fa-facebook fa-lg"></i>
+          <%= link_to " #{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), :class => "fire" %><br />
+      <% end %>
+    <% end %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

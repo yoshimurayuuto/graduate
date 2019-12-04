@@ -1,7 +1,9 @@
 <%= form_with(model: @share, local: true) do |f| %>
 <div>
-  <%= f.label :やるべきこと %>
+  <%= f.label :他人に優しくしたこと %>
   <%= f.text_field :kindness %>
 </div>
+<div class="bubbly-button">
 <%= f.submit "投稿" %>
+</div>
 <% end %>

@@ -1,0 +1,7 @@
+<%= form_with(model: @article) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <%= f.submit "投稿" %>
+<% end %>

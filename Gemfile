@@ -10,6 +10,14 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'gretel'
+gem 'sprockets', '3.6.3'
+gem 'meta-tags'
+gem 'sitemap_generator'
+gem 'kaminari'
+gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
+gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use postgresql as the database for Active Record

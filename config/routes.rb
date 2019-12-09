@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   root 'tops#index'
   get "/shizuka", to: "devise/mailer#confirmation_instructions"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   get "/users", to: "users#index"
+  resources :users, only: [:index, :show]
   resources :conversations do
     resources :messages
   end

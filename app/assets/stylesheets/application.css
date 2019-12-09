@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
  *= require_tree .
  *= require_self
  */
@@ -19,9 +20,9 @@
   background: skyblue;
 }
 
-#nav-drawer {
+nav-drawer {
   position: relative;
-}
+} 
 
 /*チェックボックス等は非表示に*/
 .nav-unshown {
@@ -101,7 +102,7 @@
 
 /* フォローボタン */
 
-.btn{
+/* .btn{
   display: inline-block;
   cursor: pointer;
   padding: 8px 30px;
@@ -110,12 +111,14 @@
   border-radius: 3px;
   color: #fff;
   font-size: 10px;
-}
+} */
 
 .btn:active{
   position: relative;
   top: 5px;
   box-shadow: none;
+}
+.btn {
 }
 .language-text {
   display: none;
@@ -290,7 +293,7 @@ body{
     line-height: 50px;
     text-align: center;
   }
-  #social-icon i:before { padding 0; line-height: 50px; }
+  #social-icon i:before { padding: 0; line-height: 50px; }
   #social-icon .fa-twitter { background: #00a1e9; }
   #social-icon .fa-facebook { background: #3b5998; }
   #social-icon .fa-google-plus { background: #c53727; }
@@ -327,3 +330,454 @@ body{
     font-size: 20px;
     color: green;
   }
+
+
+
+
+
+
+
+.transition10{transition:all 1s cubic-bezier(0.190, 1.000, 0.220, 1.000);}
+.delay01{transition-delay: .1s;}
+.delay02{transition-delay: .2s;}
+.delay03{transition-delay: .3s;}
+.delay04{transition-delay: .4s;}
+.delay05{transition-delay: .5s;}
+.delay06{transition-delay: .6s;}
+.delay07{transition-delay: .7s;}
+.delay08{transition-delay: .8s;}
+.delay09{transition-delay: .9s;}
+.delay10{transition-delay: 1s;}
+.delay11{transition-delay: 1.1s;}
+
+
+.fullnav{
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;    
+}
+
+
+
+.fullnav__nav{
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+/*gnav*/
+.gnav{
+  margin: 0 auto;
+  width: 40%;
+}
+.gnav__menu__item{
+  margin:20px 0;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.gnav a{
+  color: #333;
+  text-decoration: none;
+}
+
+
+
+
+
+
+.fullnav__cnt{
+  align-items: center;
+  background: #333;
+  color: #fff;
+  display: flex;
+  height: 100%;
+  left: 30%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+.fullnav__cnt__inner{
+  margin: 0 auto;
+  width: 80%;
+}
+.fullnav__cnt__title{
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.fullnav__cnt__menu{
+  list-style: none;
+}
+.fullnav__cnt__menu__item{
+  margin:20px 0;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.fullnav__cnt__menu__item a{
+  color: #fff;
+}
+
+
+
+
+
+.fullnav.on .fullnav__nav{
+  opacity: 1;
+  width: 30%;
+}
+/*on gnav*/
+.fullnav.on .gnav li{
+  opacity: 1;
+  transform: translateY(0);   
+}
+/*on fullnav__cnt*/
+.fullnav.on .fullnav__cnt{
+  opacity: 1;
+  width: 70%;
+}
+.fullnav.on .fullnav__cnt__title{
+  opacity: 1;
+  transform: translateY(0);
+}
+.fullnav.on .fullnav__cnt__menu__item{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Varela Round Regular'), local('VarelaRound-Regular'), url(https://fonts.gstatic.com/s/varelaround/v12/w8gdH283Tvk__Lua32TysjIfp8uK.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  --accent-
+  color: #45494E;
+  --gradient-color: #FBFBFB;
+}
+a:focus {
+  outline: none;
+  position: relative;
+}
+a:focus:after {
+  width: 50px;
+}
+a:after {
+  content: "";
+  background: #FBFBFB;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  height: 3px;
+  width: 0;
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+body {
+  background: rgb(12, 212, 212);
+  font-family: "Varela Round", Nunito, Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+.menu {
+  margin: 15px;
+}
+.menu > ol {
+  list-style: none;
+  margin: 30px 0;
+  padding: 0;
+}
+.menu > ol > li {
+  background: #3c3c3c;
+  border-left: 5px solid var(--gradient-color);
+  margin-bottom: 1px;
+  position: relative;
+  transition: 0.5s;
+}
+.menu > ol > li:nth-child(1) {
+  --accent-color: #FDA085;
+  --gradient-color: #F6D365;
+}
+.menu > ol > li:nth-child(2) {
+  --accent-color: #BFF098;
+  --gradient-color: #6FD6FF;
+}
+.menu > ol > li:nth-child(3) {
+  --accent-color: #EA8D8D;
+  --gradient-color: #A890FE;
+}
+.menu > ol > li:nth-child(4) {
+  --accent-color: #D8B5FF;
+  --gradient-color: #1EAE98;
+}
+.menu > ol > li:nth-child(5) {
+  --accent-color: #C6EA8D;
+  --gradient-color: #FE90AF;
+}
+.menu > ol > li a {
+  color: #FBFBFB;
+  display: block;
+  padding: 15px;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.menu > ol > li a:not(:last-child):before {
+  content: "\f078";
+  font-family: fontAwesome;
+  font-size: 0.75em;
+  line-height: 50px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: 0.5s;
+}
+.menu > ol > li:focus,
+.menu > ol > li:focus-within,
+.menu > ol > li:hover {
+  z-index: 100;
+}
+.menu > ol > li:focus:after,
+.menu > ol > li:focus-within:after,
+.menu > ol > li:hover:after {
+  background: linear-gradient(to left, var(--accent-color), var(--gradient-color));
+  max-width: 800px;
+}
+.menu > ol > li:focus .sub-menu,
+.menu > ol > li:focus-within .sub-menu {
+  max-height: 500px;
+}
+.menu > ol > li:focus a:before,
+.menu > ol > li:focus-within a:before {
+  transform: rotate(-180deg);
+}
+.menu > ol > li:after {
+  background: #3c3c3c;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.5s;
+  max-width: 0;
+  overflow: hidden;
+}
+.menu > ol .sub-menu {
+  border-left: 1px solid #FBFBFB;
+  margin-left: 22.5px;
+  list-style: none;
+  max-height: 0px;
+  overflow: hidden;
+  padding-left: 7.5px;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+}
+.menu > ol .sub-menu li {
+  font-size: 0.9em;
+}
+.menu > ol .sub-menu li:hover,
+.menu > ol .sub-menu li a:focus {
+  background: rgba(60, 60, 60, 0.3);
+}
+.menu > ol .sub-menu li a:after {
+  bottom: 5px;
+  height: 1px;
+}
+.menu > ol .sub-menu li a:hover:after,
+.menu > ol .sub-menu li a:focus:after {
+  width: 15px;
+}
+@media (min-width: 600px) {
+  a:focus,
+  a:hover {
+    position: relative;
+  }
+  a:focus:after,
+  a:hover:after {
+    width: 50px;
+  }
+  a:after {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .menu {
+    margin: 0;
+    /* margin-top: 40vh; */
+  }
+  .menu > ol {
+    display: block;
+    max-width: none;
+    text-align: center;
+  }
+  .menu > ol > li {
+    border-top: 5px solid var(--accent-color);
+    border-left: 0;
+    display: inline-block;
+    margin-left: -5px;
+    vertical-align: top;
+    width: 120px;
+  }
+  .menu > ol > li:hover:after,
+  .menu > ol > li:focus:after,
+  .menu > ol > li:focus-within:after {
+    background: linear-gradient(to bottom, var(--accent-color), var(--gradient-color));
+    border-radius: 3px;
+    top: -15px;
+    bottom: -15px;
+    left: -15px;
+    right: -15px;
+  }
+  .menu > ol > li:hover .sub-menu,
+  .menu > ol > li:focus .sub-menu,
+  .menu > ol > li:focus-within .sub-menu {
+    max-height: 750px;
+  }
+  .menu > ol > li a:not(:last-child):before {
+    right: 12.5px;
+  }
+  .menu > ol > li:hover a:before {
+    transform: rotate(-180deg);
+  }
+  .menu > ol .sub-menu {
+    border-left: 0;
+    margin: 15px -15px -15px;
+    padding-left: 0;
+  }
+}
+@media (min-width: 775px) {
+  .menu > ol > li {
+    width: 150px;
+  }
+  .menu > ol > li a:not(:last-child):before {
+    right: 25px;
+  }
+}
+View Less Code
+
+.a {
+  color: red;
+}
+
+.a {
+  text-align: center;
+}
+
+.field {
+  text-align: center;
+}
+
+.actions {
+  text-align: center;
+}
+
+#social-icon {
+  text-align: center;
+}
+
+
+
+
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;    /*角を丸くする*/
+} */
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+#site-content {
+  min-height: 100%;
+  min-height: 100vh;
+  padding-top: 65px;
+  position: relative;
+  z-index: 1;
+
+  -webkit-box-shadow: #000 0 7px 35px 0;
+  -moz-box-shadow: #000 0 7px 35px 0;
+  box-shadow: #000 0 7px 35px 0;
+
+}
+
+#site-footer {
+  padding: 25px 0;
+  font-size: 85%;
+  background-color: #2A2A2A;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* NOT NEEDED, THIS IS JUST FOR THE PEN */
+@import url(//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css);
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #D1D1D1;
+}
+#site-content {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+}
+
+#site-footer {
+  min-height: 20vw;
+  /* DID THIS SO YOU CAN SEE IT AUTOMATICALLY SCALE - SIMULATION RESPONSIVENESS */
+  /* RESIZE THE WINDOW AND THEN SCROLL VERITCALLY AGAIN */
+  background-size: cover;
+  background-position: center;
+  background-image: url('/IMG_2812のコピー.jpg');
+}

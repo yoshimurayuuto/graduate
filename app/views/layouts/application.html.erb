@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>Submit</title>
+    <%= display_meta_tags site: 'MetaTagsサンプル' %>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
@@ -21,15 +23,14 @@
         </ul>
       </div>
     </div>
+    <%= breadcrumbs pretext: "You are here: ", separator: " &rsaquo; " %>
   </header>
 
   <body>
-    <li><%= link_to 'ユーザー一覧', users_path %></li>
     <% if user_signed_in? %>
 
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to 'Googleでサインアップしてね', user_google_omniauth_authorize_path %>
     <% end %>
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>

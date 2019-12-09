@@ -12,6 +12,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @share = Share.find(params[:share_id])
+    @share.comments.find(params[:id]).destroy
+    redirect_to share_path(@share)
+  end
+
   private
   # ストロングパラメーター
   def comment_params

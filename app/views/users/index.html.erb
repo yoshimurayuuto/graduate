@@ -1,5 +1,8 @@
 <h2>ユーザー</h2>
+
+<% breadcrumb :users %>
 <% @users.each do |user| %>
+  <%= link_to "詳細", user_path(user.id) %>
   <% if user.name.present? %>
     <p>名前 : <%= user.name %></p>
     <% if current_user %>

@@ -1,0 +1,42 @@
+
+<body>
+<div id="site-content">
+
+
+
+  <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
+  <%= form.label :title_search %>
+  <%= form.text_field :title, class: "article" %>
+  <%= form.submit '検索する' %>
+  <% end %>
+
+  <% title '記事一覧' %>
+  <%= paginate @articles %>
+  <% description 'このページでは記事を一覧することができます。' %>
+  <% keywords %w(Ruby Rails gem) %>
+  <% breadcrumb :articles %>
+  <p id="notice"><%= notice %></p>
+
+  <% if @keyword.present? %>
+    <p><%= @keyword %>の検索結果<%= @articles.count %>件</p>
+  <% end %>
+        
+  <ul>
+    <% @articles.each do |article| %>
+      <P><%= link_to article.title, article_path(article.id)  %></p>
+    <% end %>
+  </ul>
+
+        <div class="contents">
+        
+        </div>
+
+        <!--固定ボタン-->
+        <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
+
+    
+    
+    </div>
+    <div id="site-footer"></div>
+    
+</body>

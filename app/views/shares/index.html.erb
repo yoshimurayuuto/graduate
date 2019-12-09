@@ -1,5 +1,5 @@
 <% @shares.each do |share| %>
-  <p>他人に対して優しくしたこと: <%= share.kindness %></p>
+  <p>自殺についての考察: <%= share.kindness %></p>
   <%= link_to '詳細を確認する', share_path(share.id) %>
   <%= link_to "編集", edit_share_path(share.id) %>
 <% end %>

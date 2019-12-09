@@ -38,6 +38,10 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 
 
 
+
+
+
+
 $('.menu').on('click',function(){
   $(this).toggleClass('on');
   if($('.fullnav').hasClass('on')){//fullnavが開いている時

@@ -15,6 +15,11 @@
  *= require_self
  */
 
+
+ /* ハンバーガーメニューの作り方 */
+ /* https://saruwakakun.com/html-css/reference/nav-drawer */
+
+
  header {
   padding:10px;
   background: skyblue;
@@ -30,12 +35,12 @@ nav-drawer {
 }
 
 /*アイコンのスペース*/
-#nav-open {
+ #nav-open {
   display: inline-block;
   width: 30px;
   height: 22px;
   vertical-align: middle;
-}
+} 
 
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
@@ -100,9 +105,25 @@ nav-drawer {
 
 
 
-/* フォローボタン */
 
-/* .btn{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フォローボタン */
+/* インスタクローンrika参考 */
+
+ .btn{
   display: inline-block;
   cursor: pointer;
   padding: 8px 30px;
@@ -111,15 +132,14 @@ nav-drawer {
   border-radius: 3px;
   color: #fff;
   font-size: 10px;
-} */
+} 
 
 .btn:active{
   position: relative;
   top: 5px;
   box-shadow: none;
 }
-.btn {
-}
+
 .language-text {
   display: none;
 }
@@ -148,6 +168,8 @@ nav-drawer {
 
 
 /* 投稿ボタン */
+/* https://lab.sonicmoov.com/markup/css/css-button/ */
+
 
 $fuschia: #ff0081;
 $button-bg: $fuschia;
@@ -276,16 +298,16 @@ body{
 
 
 
+/* snsボタンcss */
+/* http://weboook.blog22.fc2.com/blog-entry-397.html?sp */
 
-
-
-/* #social-icon li{
+#social-icon li{
     display: block;
     float: left;
     margin: 0 5px 5px 0;
     padding: 0;
     color: #fff;
-  } */
+  } 
   #social-icon i {
     width: 50px;
     height: 50px;
@@ -472,7 +494,7 @@ body{
   box-sizing: border-box;
 }
 :root {
-  --accent-
+  --accent-:
   color: #45494E;
   --gradient-color: #FBFBFB;
 }
@@ -718,14 +740,13 @@ View Less Code
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {        
   border-radius: 15px;    /*角を丸くする*/
-} */
+} 
 
 
 
 
 
 
- */
 
 
 

@@ -15,7 +15,7 @@ class SharesController < ApplicationController
       ShareMailer.share_mail(@share).deliver
       redirect_to shares_path
     else
-      render :new
+      render :new, notice: "投稿できませんでした"
     end
   end
 

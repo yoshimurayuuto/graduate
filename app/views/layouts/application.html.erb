@@ -2,8 +2,17 @@
 <html>
   <head>
     <title>Submit</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154212487-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+  gtag('config', 'UA-154212487-1');
+</script>
+
     <%= display_meta_tags site: 'MetaTagsサンプル' %>
-    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,6 +36,7 @@
   </header>
 
   <body>
+  <%= analytics_init if Rails.env.production? %>
     <% if user_signed_in? %>
 
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

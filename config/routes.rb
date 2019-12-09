@@ -7,10 +7,14 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+  resources :moneis, only: [:index]
   resources :shares do
     resources :comments
   end
   get "/users", to: "users#index"
+  get "/articles/loves", to: "articles#love"
+
+
   resources :users, only: [:index, :show]
   resources :conversations do
     resources :messages

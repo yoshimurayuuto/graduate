@@ -1,2 +1,15 @@
 
 <% breadcrumb :user, @user %>
+
+<p>フォロー数:<%= @user.following.count %></p>
+<p>フォロワー数:<%= @user.followers.count %></p>
+
+
+<% @user.following.each do |a| %>
+<p>フォロー一覧:<%= a.name %></p>
+<% end %>
+<% @user.followers.each do |a| %>
+<p>フォロワー一覧:<%= a.name %></p>
+<% end %>
+
+

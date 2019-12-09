@@ -1,15 +1,18 @@
 
 <body>
+<hreader>
+  <div class="container">
+  <div class="item"><a href="/moneis/index" class="btn login">お金/スキル</a></div>
+  <div class="item"><a href="/users" class="btn login">家族/友達</a></div>
+  <div class="item"><a href="/users" class="btn login">哲学/道徳</a></div>
+  </div>
+</header >
 <div id="site-content">
-
-
-
   <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
   <%= form.label :title_search %>
   <%= form.text_field :title, class: "article" %>
   <%= form.submit '検索する' %>
   <% end %>
-
   <% title '記事一覧' %>
   <%= paginate @articles %>
   <% description 'このページでは記事を一覧することができます。' %>

@@ -12,7 +12,7 @@ class SharesController < ApplicationController
   def create
     @share = Share.new(share_params)
     if @share.save
-      NoticeMailer.sendmail_share(@share).deliver_later
+      ShareMailer.share_mail(@share).deliver
       redirect_to shares_path
     else
       render :new
@@ -39,7 +39,7 @@ class SharesController < ApplicationController
    private
 
    def share_params
-    params.require(:share).permit(:kindness)
+    params.require(:share).permit(:declaration)
    end
 
    def set_share

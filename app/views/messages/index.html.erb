@@ -14,7 +14,8 @@
               <%= message.body %> /
               <% if message.user == current_user %>
                 <%= message.read ? '既読' : '未読' %>
-              <% end %>  
+              <% end %> 
+              <%= link_to "削除" , conversation_message_path(@conversation.id, message.id), method: :delete %>
             </div>
           </div>
         </div>

@@ -46,8 +46,8 @@ https://docs.google.com/spreadsheets/d/1qfoDhEa6WT6fhZRMnu78lksDmEeCJ5PkA5ULCJf-
 |Functions list|機能名|
   |:--|--
   |１ |googleログイン機能|
-  |2 |自殺についてを投稿|
-  |3|自殺についてを詳細|
+  |2 |「自殺について」の投稿|
+  |3|「自殺について」の詳細|
   |4 |ページネーション|
   |5 |ログイン機能|
   |6 |コメント機能|

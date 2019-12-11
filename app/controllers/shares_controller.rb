@@ -11,6 +11,7 @@ class SharesController < ApplicationController
 
   def create
     @share = Share.new(share_params)
+    @share.user_id = current_user.id
     if @share.save
       redirect_to shares_path
     else

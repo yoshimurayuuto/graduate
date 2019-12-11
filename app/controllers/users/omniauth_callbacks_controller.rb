@@ -5,7 +5,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should also create an action method in this controller like this:
   def twitter
     @user = User.find_or_create_for_oauth(request.env['omniauth.auth'])
-
     if @user.persisted?
       sign_in_and_redirect @user
       set_flash_message(:notice, :success, kind: "Twitter") if is_navigational_format?
@@ -17,7 +16,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
     @user = User.find_or_create_for_oauth(request.env['omniauth.auth'])
-
     if @user.persisted?
       sign_in_and_redirect @user
       set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?

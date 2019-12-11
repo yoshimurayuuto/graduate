@@ -1,12 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+概要
+自殺についてどう思うか考えるアプリ
+現代社会、ほとんどの人が少しでも長く生きていたいと考えていると思う。でも果たしてそうなのかを皆に考えてもらいたいのでこのアプリを作ることにした。
+私は、より多くの方々に、辛い毎日を送るぐらいだったら自殺という選択肢を与えたい。
+メディア、世間が自殺を悪だと訴えるが私はその考えに違和感を持つ
 
-Things you may want to cover:
+Concept
+投稿ブログ
+
+Version
 
 * Ruby version
-ruby '2.6.5'
+* ruby '2.6.5'
+
+Rails version
+rails 5.2.4'
 
 カタログ設計
 https://docs.google.com/spreadsheets/d/1qfoDhEa6WT6fhZRMnu78lksDmEeCJ5PkA5ULCJf-TJw/edit?usp=sharing
@@ -21,31 +30,30 @@ https://docs.google.com/spreadsheets/d/1qfoDhEa6WT6fhZRMnu78lksDmEeCJ5PkA5ULCJf-
 https://docs.google.com/spreadsheets/d/1qfoDhEa6WT6fhZRMnu78lksDmEeCJ5PkA5ULCJf-TJw/edit#gid=1136547866
 
 使用予定Gem
-devise
-omniauth
-kaminari
-google-analytics-rails
-omniauth-google-oauth2
-omniauth-facebook
-omniauth-twitter
 
-概要
-自殺についてどう思うか考えるサイト
+|gem一覧|gem名|
+  |:--|--
+  |１ |devise|
+  |2 |omniauth|
+  |3|kaminari|
+  |4 |google-analytics-rails|
+  |5 |omniauth-google-oauth2|
+  |6 |omniauth-facebook|
+  |7 |omniauth-twitter|
 
-Concept
-投稿ブログ
 
-Version
-ruby '2.6.5'
-rails '~> 5.2.4'
 
-Functions list
-googleログイン機能
-自殺についてを投稿
-自殺についてを詳細
-ページネーション
-ログイン機能
-コメント機能
-フォロー、フォロワー機能
-非同期メール送信機能
-会話機能
+
+
+
+|Functions list|機能名|
+  |:--|--
+  |１ |googleログイン機能|
+  |2 |自殺についてを投稿|
+  |3|自殺についてを詳細|
+  |4 |ページネーション|
+  |5 |ログイン機能|
+  |6 |コメント機能|
+  |7 |フォロー、フォロワー機能|
+  |8 |非同期メール送信機能|
+  |9 |会話機能|

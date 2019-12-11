@@ -1,8 +1,10 @@
-
-<h1>未来ノート</h1>
-<h2><%= link_to "新規投稿", new_share_path %></h2>
+<h1>自殺を許容する社会</h1>
+<h2>皆で自殺についての理解を深めよう</h2>
+<div class="f-container">
+<div class="f-item fuwatto_btn_yellow"><%= link_to "新規投稿", new_share_path %></div>
+</div>
 <% @shares.each do |share| %>
-  <p>自殺についての考察: <%= share.declaration %></p>
+  <p>自殺を許容する社会: <%= share.declaration %></p>
   <%= link_to '詳細を確認する', share_path(share.id) %>
   <%= link_to "編集", edit_share_path(share.id) %>
 <% end %>

@@ -1,0 +1,14 @@
+<%= form_with(model: Philosophy.new, method: :get, url: philosophies_path, local: true) do |form| %>
+  <%= form.label :記事検索 %>
+  <%= form.text_field :title, class: "philosophy" %>
+  <%= form.submit '検索する' %>
+<% end %>
+
+<% if @keyword.present? %>
+  <p><%= @keyword %>の検索結果<%= @philosophies.count %>件</p>
+<% end %>
+
+<% @philosophies.each do |philosophy| %>
+  <p>タイトル:<%= philosophy.title %></p>
+  <p>内容:<%= philosophy.body %></p>
+<% end %>

@@ -1,0 +1,11 @@
+<%= form_with(model: @philosophy) do |f| %>
+  <div>
+    <%= f.label :哲学 %></br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :哲学 %></br>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+
+
+<%= form_with(model: @money, local: true, url: moneis_path) do|f| %>
+  <%= f.label :タイトル %>
+  <%= f.text_field :title %></br>
+  <%= f.label :内容 %>
+
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>

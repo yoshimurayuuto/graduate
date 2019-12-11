@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_062120) do
+ActiveRecord::Schema.define(version: 2019_12_10_103954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 2019_12_09_062120) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "families", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -68,6 +73,13 @@ ActiveRecord::Schema.define(version: 2019_12_09_062120) do
   end
 
   create_table "money", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "philosophies", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false

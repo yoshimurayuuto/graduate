@@ -11,9 +11,7 @@ class SharesController < ApplicationController
 
   def create
     @share = Share.new(share_params)
-    binding.pry
     if @share.save
-      ShareMailer.share_mail(@share).deliver
       redirect_to shares_path
     else
       render :new, notice: "投稿できませんでした"

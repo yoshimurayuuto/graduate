@@ -3,7 +3,6 @@
 <% breadcrumb :users %>
 <% @users.each do |user| %>
   <%= link_to "詳細", user_path(user.id) %>
-  <%= link_to "#{user.email.split("@")}", user_path(user) %>
   <% if user.name.present? %>
     <p>名前 : <%= user.name %></p>
     <% if current_user %>

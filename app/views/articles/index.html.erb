@@ -2,14 +2,14 @@
 <body>
 <hreader>
   <div class="container">
-  <div class="item"><a href="/moneis/index" class="btn login">お金/スキル</a></div>
-  <div class="item"><a href="/users" class="btn login">家族/友達</a></div>
-  <div class="item"><a href="/users" class="btn login">哲学/道徳</a></div>
+  <div class="item"><a href="/moneis" class="btn login">お金/スキル</a></div>
+  <div class="item"><a href="/families" class="btn login">家族/友達</a></div>
+  <div class="item"><a href="/philosophies" class="btn login">哲学/道徳</a></div>
   </div>
 </header >
 <div id="site-content">
   <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
-  <%= form.label :title_search %>
+  <%= form.label :記事検索 %>
   <%= form.text_field :title, class: "article" %>
   <%= form.submit '検索する' %>
   <% end %>
@@ -23,12 +23,16 @@
   <% if @keyword.present? %>
     <p><%= @keyword %>の検索結果<%= @articles.count %>件</p>
   <% end %>
+
         
   <ul>
+    <h5>記事一覧</h5>
     <% @articles.each do |article| %>
-      <P><%= link_to article.title, article_path(article.id)  %></p>
+      <P class="tako"><%= link_to article.title, article_path(article.id)  %></p></br>
+      <%= link_to "削除", article_path(article.id), method: :delete  %></br>
     <% end %>
   </ul>
+  <%= link_to "投稿", new_article_path %>
 
         <div class="contents">
         

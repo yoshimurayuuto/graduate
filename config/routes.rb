@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'families/index'
+  resources :philosophies
   resources :articles
+  resources :families
   root 'tops#index'
   get "/shizuka", to: "devise/mailer#confirmation_instructions"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -7,7 +10,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :moneis, only: [:index]
+  resources :moneis
   resources :shares do
     resources :comments
   end

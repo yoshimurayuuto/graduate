@@ -1,1 +1,28 @@
-<h1>お金について</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <%= form_with(model: Money.new, method: :get, url: moneis_path, local: true) do |form| %>
+    <%= form.label :記事検索 %>
+    <%= form.text_field :title, class: "money" %>
+    <%= form.submit '検索する' %>
+  <% end %>
+
+  <% if @keyword.present? %>
+    <p><%= @keyword %>の検索結果<%= @moneis.count %>件</p>
+  <% end %>
+    
+    <%= link_to "投稿", new_monei_path %>
+
+
+    <% @moneis.each do |money| %>
+    <h3 id="1">タイトル: <%= link_to money.title, monei_path(money.id)  %></h3>
+      <%= link_to "削除", monei_path(money.id), method: :delete %>
+    <% end %>
+  </body>
+</html>
+
+
+

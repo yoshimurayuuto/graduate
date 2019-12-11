@@ -1,11 +1,12 @@
 <%= form_with(model: @share, local: true) do |f| %>
 <%  notice %>
-<div>
-  <%= f.label :未来の自分に現在あなたが頑張っていることを伝えよう %>
-  <%= f.text_field :declaration %>
+
+<div id="think">
+  <%= f.label :自殺を許容する社会についてあなたが思うことを記入してください%></br>
+  <%= f.text_area :declaration %>
 </div>
 
-<div class="bubbly-button">
-<%= f.submit "投稿" %>
+<div class="bubbly-button", id="think">
+  <%= f.submit "投稿" %>
 </div>
 <% end %>

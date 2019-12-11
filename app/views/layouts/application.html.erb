@@ -18,6 +18,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="dist/toc.min.js"></script>
   </head>
   <header>
     <div id="nav-drawer">
@@ -28,7 +30,8 @@
         <ul>
         <%= link_to "新規登録", new_user_registration_path %></br>
         <%= link_to "新規投稿", new_share_path %></br>
-        <%= link_to "投稿一覧", shares_path %>
+        <%= link_to "投稿一覧", shares_path %></br>
+        <%= link_to "記事一覧", articles_path %>
         </ul>
       </div>
     </div>

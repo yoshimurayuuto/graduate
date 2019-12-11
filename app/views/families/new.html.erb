@@ -1,0 +1,12 @@
+<%= form_with(model: @family) do |f| %>
+  <div>
+    <%= f.label :ハローキティ %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :家族 %>
+    <%= f.text_field :body%>
+  </div>
+  <%= f.submit %>
+<% end %>

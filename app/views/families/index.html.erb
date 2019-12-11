@@ -1,0 +1,14 @@
+<%= form_with(model: Family.new, method: :get, url: families_path, local: true) do |form| %>
+  <%= form.label :記事検索 %>
+  <%= form.text_field :title, class: "family" %>
+  <%= form.submit '検索する' %>
+<% end %>
+
+<% if @keyword.present? %>
+    <p><%= @keyword %>の検索結果<%= @families.count %>件</p>
+  <% end %>
+
+<% @families.each do |family| %>
+  <p>タイトル:<%= family.title %></p>
+  <p>内容:<%= family.body %></p>
+<% end %>

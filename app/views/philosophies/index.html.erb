@@ -9,7 +9,8 @@
 <% end %>
 
 <% @philosophies.each do |philosophy| %>
-  <p>タイトル:<%= philosophy.title %></p>
-  <p>内容:<%= philosophy.body %></p>
+  <p>記事名:<%= link_to philosophy.title,  philosophy_path(philosophy.id) %></p>
   <%= link_to "削除", philosophy_path(philosophy.id), method: :delete %>
 <% end %>
+
+<%= link_to "新規投稿", new_philosophy_path %>

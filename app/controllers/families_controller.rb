@@ -27,7 +27,7 @@ class FamiliesController < ApplicationController
 
   def destroy
     @family.destroy
-    redirect_to family_path
+    redirect_to families_path
   end
 
   private
@@ -38,4 +38,5 @@ class FamiliesController < ApplicationController
   def set_family
     @family = Family.find(params[:id])
   end
+
 end

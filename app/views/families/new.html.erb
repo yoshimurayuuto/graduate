@@ -1,11 +1,11 @@
 <%= form_with(model: @family) do |f| %>
   <div>
-    <%= f.label :ハローキティ %>
+    <%= f.label :記事名 %>
     <%= f.text_field :title %>
   </div>
 
   <div>
-    <%= f.label :家族 %>
+    <%= f.label :内容 %>
     <%= f.text_field :body%>
   </div>
   <%= f.submit %>

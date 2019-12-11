@@ -10,7 +10,6 @@
 
 <% @families.each do |family| %>
   <p>記事名: <%= link_to family.title, family_path(family.id)  %></p>
-  <p>内容:<%= family.body %></p>
   <%= link_to "削除", family_path(family.id), method: :delete %>
 <% end %>
 

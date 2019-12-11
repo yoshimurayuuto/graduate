@@ -11,4 +11,5 @@
 <% @philosophies.each do |philosophy| %>
   <p>タイトル:<%= philosophy.title %></p>
   <p>内容:<%= philosophy.body %></p>
+  <%= link_to "削除", philosophy_path(philosophy.id), method: :delete %>
 <% end %>

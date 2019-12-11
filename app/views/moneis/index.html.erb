@@ -18,7 +18,7 @@
 
 
     <% @moneis.each do |money| %>
-    <h3 id="1">タイトル: <%= link_to money.title, monei_path(money.id)  %></h3>
+    <h3 id="1">記事名: <%= link_to money.title, monei_path(money.id)  %></h3>
       <%= link_to "削除", monei_path(money.id), method: :delete %>
     <% end %>
   </body>

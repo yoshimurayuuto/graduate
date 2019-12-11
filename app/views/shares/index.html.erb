@@ -1,12 +1,13 @@
-<h1>自殺を許容する社会</h1>
-<h2>皆で自殺についての理解を深めよう</h2>
+<h1>自殺を許容する社会の是非</h1>
 <div class="f-container">
 <div class="f-item fuwatto_btn_yellow"><%= link_to "新規投稿", new_share_path %></div>
 </div>
 <% @shares.each do |share| %>
-  <p>自殺を許容する社会: <%= share.declaration %></p>
-  <%= link_to '詳細を確認する', share_path(share.id) %>
-  <%= link_to "編集", edit_share_path(share.id) %>
+  <p>自殺を許容する社会の是非: <%= share.declaration %></p>
+  <%if share.user_id == current_user.id %>
+    <%= link_to '詳細を確認する', share_path(share.id) %>
+    <%= link_to "編集", edit_share_path(share.id) %>
+  <% end %>
 <% end %>
 
 

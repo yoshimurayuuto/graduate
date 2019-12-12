@@ -143,6 +143,11 @@ nav-drawer {
 }
 .item {
   font-size: 20px;
+  display: block;
+  background-color: #eee;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #eee;
+  padding: 1em;
 }
 .group {
   padding: 16px 24px;
@@ -1006,6 +1011,10 @@ button:hover:before,button:hover:after{
 
 
 
+
+
+
+
 /************************************
 ** トグル表示ボタン カスタマイズ
 ************************************/
@@ -1131,4 +1140,33 @@ button:hover:before,button:hover:after{
 
 #tit {
   background-color: wheat;
+}
+
+
+.link3 {
+  display: block;
+  background-color: #eee;
+  padding: 1em;
+  font-size: 20px;
+}
+
+
+
+
+.tatu {
+  color: #1AAB8A;
+}
+
+.iroha {
+  color: violet;
+}
+
+.midashi {
+  position: relative;
+  padding: 0.3em 0.5em;
+  background: -webkit-linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  background: linear-gradient(to top, rgb(137, 184, 255), #c5ceff);
+  color: #495193;
+  height: 40px;
+  font-size: 20px;
 }

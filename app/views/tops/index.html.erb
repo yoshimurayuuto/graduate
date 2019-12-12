@@ -1,7 +1,4 @@
 
-<div>
-<%= link_to '記事一覧', articles_path %>
-</div>
 <nav class="menu">
   <ol>
     <li class="menu-item"><a href="/users/sign_up">新規登録</a></li>
@@ -9,9 +6,6 @@
     <li class="menu-item">
       <a href="/articles">記事一覧</a>
       <ol class="sub-menu">
-        <li class="menu-item"><a href="/families">家族/友達</a></li>
-        <li class="menu-item"><a href="/philosophies">哲学</a></li>
-        <li class="menu-item"><a href="/moneis">お金/スキル</a></li>
       </ol>
     </li>
     <li class="menu-item">
@@ -21,10 +15,6 @@
 </nav>
 
 <body>
-　<div class="start">
-        <p class="summer"><img src="/82414224.jpeg" alt=""></p>
-    　<h1 class="spring">人生悔いのないように生きていますか?</h1></br>
-　</div>
 
     <%= breadcrumbs %>
     <%= yield %>

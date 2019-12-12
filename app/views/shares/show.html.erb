@@ -9,6 +9,8 @@
   <div id="comments_area">
     <%= render partial: "comments/index", locals: {comments: @comments, share: @share} %>
     <%= render partial: "comments/form", locals: {comment: @comment, share: @share} %>
-    <%= link_to "編集", edit_share_path(@share) %>
+    <%if @share.user_id == current_user.id %>
+      <%= link_to "編集", edit_share_path(@share) %>
+    <% end %>
      <%= link_to "戻る", shares_path %>
   </div>

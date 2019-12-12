@@ -56,11 +56,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_070611) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "families", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -70,20 +65,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_070611) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "money", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "philosophies", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|

@@ -4,9 +4,13 @@
 </div>
 <% @shares.each do |share| %>
   <p>日本から自殺者を少しでも減らすにはどうしたら良いか: <%= share.declaration %></p>
-  <p>名前:<%= share.user.name %></p>
-  <%if share.user_id == current_user.id %>
+  <% if share.user.name.present? %>
+    <p>名前:<%= share.user.name %></p>
+  <% else %>
+    <p>名前:<%= share.user.username %></p>
+  <% end %>
     <p><%= link_to '詳細を確認する', share_path(share.id) %></p>
+  <%if share.user_id == current_user.id %>
     <p><%= link_to "編集", edit_share_path(share.id) %></p>
   <% end %>
 <% end %>

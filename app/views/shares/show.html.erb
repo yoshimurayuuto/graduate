@@ -2,10 +2,10 @@
 
   <p id="notice"></p>
   <div>
-  <h3>自殺を許容する社会:<%= @share.declaration %></h3>
+  <p>日本から自殺者を少しでも減らすにはどうしたら良いか考えよう:<%= @share.declaration %></p>
   </div>
 <hr>
-<h4>コメント一覧</h4>
+<p>コメント一覧</p>
   <div id="comments_area">
     <%= render partial: "comments/index", locals: {comments: @comments, share: @share} %>
     <%= render partial: "comments/form", locals: {comment: @comment, share: @share} %>

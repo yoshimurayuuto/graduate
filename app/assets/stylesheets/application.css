@@ -792,12 +792,13 @@ html, body {
 }
 
 #site-footer {
-  min-height: 20vw;
+  min-height: 15vw;
   /* DID THIS SO YOU CAN SEE IT AUTOMATICALLY SCALE - SIMULATION RESPONSIVENESS */
   /* RESIZE THE WINDOW AND THEN SCROLL VERITCALLY AGAIN */
   background-size: cover;
   background-position: center;
-  background-image: url('/IMG_2812のコピー.jpg');
+  background-color: rgb(43, 181, 190);
+  /* background-image: url('/IMG_2812のコピー.jpg'); */
 }
 
 
@@ -811,10 +812,10 @@ text_field {
   width:100%;
 }
 
-input[type="text"] {
+/* input[type="text"] {
   width: 500px;
   height: 40px;
-}
+} */
 
 /* #think{
   text-align: center;
@@ -1169,4 +1170,165 @@ button:hover:before,button:hover:after{
   color: #495193;
   height: 40px;
   font-size: 20px;
+}
+
+.remu {
+  font-size: 20px;
+}
+
+.na {
+  font-size: 20px;
+}
+
+.ed {
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.simple_square_btn4 {
+	display: block;
+	position: relative;
+	width: 160px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+	border-radius: 30px;
+	border:1px solid #1B1B1B;
+	-webkit-backface-visibility: hidden; 
+	-moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.simple_square_btn4:hover {
+	 cursor: pointer;
+	 text-decoration: none;
+	-webkit-animation: simple_square_btn4 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: simple_square_btn4 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: simple_square_btn4 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes simple_square_btn4{
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+@-moz-keyframes simple_square_btn4{
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+@keyframes simple_square_btn4 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+}
+
+
+
+.info {
+  background-color: #FDA085;
+}
+
+
+.ex {
+  font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+body{
+  background-color:#37363f;
+}
+h1, h2{
+  text-align:center;
+  font-weight:normal;
+  font-family: 'Playfair Display', serif;
+  font-size:68px;
+  text-shadow:0 2px 2px black;
+  color:white;
+}
+
+h2{
+  font-size:38px;
+  font-style:italic;
+  text-shadow:0 2px 1px black;
+  &:before, &:after{
+    content:'-';
+    padding:0 16px;
+  }
+}
+
+p{
+  color:silver;
+  text-align:center;
+}
+
+
+
+  
+  .out{
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+    font-size: 20px;
+    color: red;
+    text-align: center;
+  }
+  
+  .out::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 2px;
+    transition: .3s;
+    transform: translateX(-50%);
+  }
+  
+  .out:hover::after{
+    width: 100%;
+  }
+
+
+  .box8 {
+    padding: 0.2em 0.7em;
+    margin: 0.6em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
 }

@@ -3,16 +3,15 @@
 <div class="f-item fuwatto_btn_yellow"><%= link_to "新規投稿", new_share_path %></div>
 </div>
 <% @shares.each do |share| %>
-  <p>日本から自殺者を少しでも減らすにはどうしたら良いか: <%= share.declaration %></p>
+  <p class="remu">日本から自殺者を少しでも減らすにはどうしたら良いか: <%= link_to share.declaration, share_path(share.id) %></p>
   <% if share.user.name.present? %>
-    <p>名前:<%= share.user.name %></p>
+    <p class="na">名前:<%= share.user.name %></p>
   <% else %>
-    <p>名前:<%= share.user.username %></p>
+    <p class="na">名前:<%= share.user.username %></p>
   <% end %>
-    <p><%= link_to '詳細を確認する', share_path(share.id) %></p>
-  <%if share.user_id == current_user.id %>
-    <p><%= link_to "編集", edit_share_path(share.id) %></p>
-  <% end %>
+   <%if share.user_id == current_user.id %>
+     <p class="ed"><%= link_to "編集", edit_share_path(share.id) %></p>
+   <% end %>
 <% end %>
 
 

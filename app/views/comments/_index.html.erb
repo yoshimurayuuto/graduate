@@ -2,9 +2,9 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <p><%= comment.content %></p>
+        <p class=""><%= comment.content %></p>
         <% if current_user.id == comment.share.user.id %>
-          <%= link_to "削除", share_comment_path(@share.id, comment.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %>
+          <p class="simple_square_btn4"><%= link_to "削除", share_comment_path(@share.id, comment.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %></p>
         <% end %>
       </li>
     <% end %>

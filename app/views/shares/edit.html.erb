@@ -1,7 +1,7 @@
 <%= form_with(model: @share, local: true) do |f| %>
   <div>
-    <%= f.label :自殺を許容する社会%>
-    <%= f.text_field :declaration %>
+    <p><%= f.label :日本から自殺者を少しでも減らすにはどうしたら良いか考えよう%></p>
+    <p><%= f.text_field :declaration %></p>
   </div>
-  <%= f.submit "投稿" %>
+    <p><%= f.submit "投稿" %></p>
   <% end %>

@@ -4,6 +4,7 @@
   <div class="container">
   </div>
 </header >
+
 <div id="site-content">
   <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
     <%= form.label :記事検索 %>
@@ -22,11 +23,10 @@
   </ul>
 
         <div class="contents">
-        
         </div>
 
         <!--固定ボタン-->
         <a href="#top" class="topBtn" id="topBtn">TOP</a><!--/固定ボタン-->
-    
     </div>
+    
 </body>

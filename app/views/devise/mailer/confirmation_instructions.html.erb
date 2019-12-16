@@ -2,8 +2,6 @@
 
 <p>下記URLをクリックしてサインアップを完了させてください。</p>
 
-
-
 <% if Rails.env == "production" %>
   <p><%= link_to 'Confirm my account', "https://safe-headland-35363.herokuapp.com/users/confirmation?confirmation_token=#{@token}" %></p>
 <% else %>

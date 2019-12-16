@@ -4,7 +4,6 @@
 <p class="midashi">フォロー数:<%= @user.following.count %></p>
 <p class="midashi">フォロワー数:<%= @user.followers.count %></p>
 
-
 <% @user.following.each do |a| %>
 <p class="midashi">フォロー一覧:<%= a.name %></p>
 <% end %>

@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-100.times do |n| 
-    Article.create!(title: "8",
-                            body: "9",
+# ss
+
+1.times do |n| 
+    Article.create!(title: "自殺がない世界",
+                            body: "私はこの世に自殺がなければどれだけ素晴らしいことかと考える。誰もが毎日笑顔で生活を送る姿を想像するだけで,私は笑顔になれる。でも皆が全員楽しい人生を送ることは現実問題難しいことは知っている。でも私は希望を持ちながら人生をあゆむと決めた"
                             )
 end

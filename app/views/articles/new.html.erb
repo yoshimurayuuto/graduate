@@ -1,13 +1,15 @@
 <%= form_with(model: @article) do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <div class="tou">
+    <div>
+      <%= f.label :title %></br>
+      <%= f.text_field :title %>
+    </div>
 
-  <div>
-    <%= f.label :内容 %>
-    <%= f.text_area :body %>
+    <div>
+      <%= f.label :内容 %></br>
+      <%= f.text_area :body %>
+    </div>
+    
+    <%= f.submit "投稿" %>
   </div>
-  
-  <%= f.submit "投稿" %>
 <% end %>

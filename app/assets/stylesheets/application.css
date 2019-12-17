@@ -1342,3 +1342,12 @@ p{
 .search {
   color: pink;
 }
+
+.tou {
+  background-color: #31aae2;
+  text-align: center;
+}
+
+.favorite {
+  background-color: aquamarine;
+}

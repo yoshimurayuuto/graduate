@@ -1,0 +1,14 @@
+<div class="favorite">
+  <% if current_user.name.present? %>
+    <h2><%= current_user.name %>がお気に入りした記事一覧</h2>
+    <% else %>
+    <h2><%= current_user.username %>がお気に入りした記事一覧</h2>
+  <% end %>
+
+  <% @favorites.each do |favorite| %>
+    <tr>
+      <td>記事名 : <%= favorite.title %></td></br>
+    </tr>
+  <% end %>
+  <br />
+</div>

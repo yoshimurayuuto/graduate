@@ -12,6 +12,9 @@
       <%= form.submit '検索する' %>
   <% end %>
 
+  <% if current_user.admin?  %>
+    <%= link_to "新規投稿", new_article_path %>
+  <% end %>
 
 <% if @keyword.present? %>
   <p><%= @keyword %>の検索結果<%= @articles.count %>件</p>

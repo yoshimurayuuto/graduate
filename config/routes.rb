@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :shares do
     resources :comments
   end
+  resources :favorites, only: [:create, :destroy, :index]
 
   resources :users, only: [:index, :show]
   resources :conversations do

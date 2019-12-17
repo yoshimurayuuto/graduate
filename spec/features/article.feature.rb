@@ -16,6 +16,7 @@ describe 'Articles' do
     end
 
     @article = Article.create(title: "111", body: "4")
+    @article_second = Article.create(title: "691", body: "196")
 
     
       visit new_user_registration_path

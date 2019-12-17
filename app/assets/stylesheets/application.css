@@ -492,7 +492,7 @@ body{
 }
 :root {
   --accent-:
-  color: #45494E;
+  /* color: #45494E; */
   --gradient-color: #FBFBFB;
 }
 a:focus {
@@ -1077,6 +1077,7 @@ button:hover:before,button:hover:after{
     position: relative;
     display: inline-block;
     transition: .3s;
+    color: blue;
   }
   
   .tako::after {
@@ -1331,4 +1332,9 @@ p{
     color: #232323;
     background: #fff8e8;
     border-left: solid 10px #ffc06e;
+}
+
+
+.er {
+  color: red;
 }

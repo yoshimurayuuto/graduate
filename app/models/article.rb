@@ -6,5 +6,6 @@ class Article < ApplicationRecord
       keywords: keywords
     }
   end
+  paginates_per 10
   scope :search_with_title, -> (title) {where("title LIKE ?", "%#{title}%")}
 end

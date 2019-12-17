@@ -4,13 +4,14 @@
   <div class="container">
   </div>
 </header >
-
-<div id="site-content">
-  <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
-    <%= form.label :記事検索 %>
-    <%= form.text_field :title, class: "article" %>
-    <%= form.submit '検索する' %>
+  <%= paginate @articles %>
+  <div id="site-content">
+    <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>
+      <div class="search"> <%= form.label :記事検索 %></div>
+      <%= form.text_field :title, class: "article" %>
+      <%= form.submit '検索する' %>
   <% end %>
+
 
 <% if @keyword.present? %>
   <p><%= @keyword %>の検索結果<%= @articles.count %>件</p>

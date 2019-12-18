@@ -11,6 +11,7 @@
   <% end %>
    <%if share.user_id == current_user.id %>
      <p class="ed"><%= link_to "編集", edit_share_path(share.id) %></p>
+     <p class="ed"><%= link_to "削除", share_path(share.id), method: :delete %></p>
    <% end %>
 <% end %>
 

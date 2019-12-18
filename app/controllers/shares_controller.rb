@@ -34,7 +34,10 @@ class SharesController < ApplicationController
     end
   end
 
-   def destroy;end
+   def destroy
+    @share.destroy
+    redirect_to shares_path, notice: "削除しました"
+  end
 
    private
 

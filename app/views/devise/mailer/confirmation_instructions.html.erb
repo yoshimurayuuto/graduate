@@ -1,10 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>あなたのメールアドレス : <%= @email %>!</p>
 
 <p>下記URLをクリックしてサインアップを完了させてください。</p>
 
 <% if Rails.env == "production" %>
-  <p><%= link_to 'Confirm my account', "https://safe-headland-35363.herokuapp.com/users/confirmation?confirmation_token=#{@token}" %></p>
+  <p><%= link_to 'アカウント確認', "https://safe-headland-35363.herokuapp.com/users/confirmation?confirmation_token=#{@token}" %></p>
 <% else %>
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'アカウント確認', confirmation_url(@resource, confirmation_token: @token) %></p>
 
 <% end %>

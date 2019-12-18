@@ -1,7 +1,7 @@
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
-
+<p class="err"><% notice %>
 <div class="ui segment">
   <% @messages.each do |message| %>
     <% if message.body.present? %>
@@ -27,6 +27,21 @@
 </div>
 
 <%= form_with(model: [@conversation, @message]) do |f| %>
+  
+  <% if @message.errors.any? %>
+  <% binding.pry %>
+    <div id="error_explanation">
+      <h2><%= @message.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
   </div>

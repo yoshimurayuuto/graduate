@@ -3,7 +3,10 @@
 </head>
 <nav class="menu">
   <ol>
+  <% unless current_user.present? %>
     <li class="menu-item"><a href="/users/sign_up">新規登録</a></li>
+  <% end %>
+    <li class="menu-item"> <a href="/users/sign_in">ログイン</a></li>
     <li class="menu-item"><a href="/users">ユーザー一覧</a></li>
     <li class="menu-item"> <a href="/shares">新規投稿</a></li>
     <li class="menu-item"><a href="/favorites">お気に入り記事一覧</a></li>

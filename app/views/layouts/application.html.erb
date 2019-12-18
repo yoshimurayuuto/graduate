@@ -28,13 +28,14 @@
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
       <div id="nav-content">
         <ul>
-        <%= link_to "トップ画面", root_path %></br>
-        <%= link_to "新規登録画面", new_user_registration_path %></br>
-        <%= link_to "新規投稿画面", new_share_path %></br>
-        <%= link_to "投稿一覧画面", shares_path %></br>
-        <%= link_to "記事一覧画面", articles_path %></br>
-        <%= link_to "ユーザー一覧画面", users_path %></br>
-        <%= link_to "お気に入り記事一覧画面", favorites_path %>
+        
+        <p class="nab"><%= link_to "トップ画面", root_path %></p></br>
+        <p class="top"> <%= link_to "新規登録画面", new_user_registration_path %></p></br>
+        <p class="post"><%= link_to "新規投稿画面", new_share_path %></p></br>
+        <p class="posts"><%= link_to "投稿一覧画面", shares_path %></p></br>
+        <p class="article"><%= link_to "記事一覧画面", articles_path %></p></br>
+        <p class="user"><%= link_to "ユーザー一覧画面", users_path %></p></br>
+        <p class="fav"><%= link_to "お気に入り記事一覧画面", favorites_path %></p>
         </ul>
       </div>
     </div>

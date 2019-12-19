@@ -32,7 +32,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     else
-      render 'index', notice: "内容が空により投稿できませんでした"
+      @messages = @conversation.messages
+      render :index, notice: "内容が空により投稿できませんでした"
     end
   end
 

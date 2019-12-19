@@ -1,6 +1,7 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :edit, :update, :destroy, :index, :show]
   before_action :set_share, only: [ :edit, :update, :destroy, :show]
+  before_action :management,   only: [:edit, :update]
   def index
     @shares = Share.all
   end
@@ -23,8 +24,9 @@ class SharesController < ApplicationController
     @comments = @share.comments
     @comment = @share.comments.build
   end
-
-  def edit;end
+  
+    def edit
+    end
 
    def update
     if @share.update(share_params)
@@ -48,4 +50,11 @@ class SharesController < ApplicationController
    def set_share
     @share = Share.find(params[:id])
    end
+
+   def management
+    unless @share.user_id == current_user.id
+      redirect_to shares_path
+    end
+   end
+
 end

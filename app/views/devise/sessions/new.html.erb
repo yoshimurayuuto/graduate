@@ -33,8 +33,6 @@
        <i class="fa fa-google-plus fa-lg"></i>
           <%= link_to " #{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider) %>
         <% else %>
-        <i class="fa fa-facebook fa-lg"></i>
-          <%= link_to " #{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider) %>
       <% end %>
     <% end %>
     <% end %>

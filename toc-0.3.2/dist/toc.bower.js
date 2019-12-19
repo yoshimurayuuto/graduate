@@ -5,27 +5,7 @@
  * copyright Greg Allen 2014
  * MIT License
 */
-(function($) {
-var verboseIdCache = {};
-$.fn.toc = function(options) {
-  var self = this;
-  var opts = $.extend({}, jQuery.fn.toc.defaults, options);
 
-  var container = $(opts.container);
-  var headings = $(opts.selectors, container);
-  var headingOffsets = [];
-  var activeClassName = opts.activeClass;
-
-  var scrollTo = function(e, callback) {
-    if (opts.smoothScrolling && typeof opts.smoothScrolling === 'function') {
-      e.preventDefault();
-      var elScrollTo = $(e.target).attr('href');
-
-      opts.smoothScrolling(elScrollTo, opts, callback);
-    }
-    $('li', self).removeClass(activeClassName);
-    $(e.target).parent().addClass(activeClassName);
-  };
 
   //highlight on scroll
   var timeout;

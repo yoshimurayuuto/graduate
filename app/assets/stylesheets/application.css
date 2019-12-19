@@ -84,7 +84,7 @@ nav-drawer {
   width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
   max-width: 330px;/*最大幅（調整してください）*/
   height: 100%;
-  background: #fff;/*背景色*/
+  background: #f0f8ff;/*背景色*/
   transition: .3s ease-in-out;/*滑らかに表示*/
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);/*左に隠しておく*/
@@ -1552,6 +1552,14 @@ p{
 
 .conte {
   background-color: #00ff00;
+}
+
+.reset {
+  background-color: #e7f1f2;
+}
+
+.ren {
+  text-align: center;
 }
 
 

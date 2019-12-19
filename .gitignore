@@ -28,3 +28,6 @@
 
 /config/certs/*
 !/config/certs/.keep
+
+vendor
+toc-0.3.2

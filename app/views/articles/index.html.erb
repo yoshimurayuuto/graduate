@@ -4,6 +4,7 @@
   <div class="container">
   </div>
 </header >
+
   <%= paginate @articles %>
   <div id="site-content">
     <%= form_with(model: Article.new, method: :get, url: articles_path, local: true) do |form| %>

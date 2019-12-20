@@ -35,7 +35,7 @@ RSpec.feature "ユーザー", type: :feature do
 
    #Userモデルのバリデーションのテスト
    #パスワードを記入しなかったら無効
-
+   
    it "is invalid without a password" do
     user = User.new(password: nil)
     user.valid?

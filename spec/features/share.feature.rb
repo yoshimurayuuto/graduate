@@ -37,7 +37,7 @@ RSpec.feature "ユーザー", type: :feature do
   # scenario（itのalias）の中に、確認したい各項目のテストの処理を書きます。
   # scenario "他のユーザーをフォローする" do
 
-    it "自殺をどう止めるか投稿" do
+    it "自殺を減らすために私たちは何ができるかについて投稿" do
       visit shares_path
      Share.create(declaration: "aa", user_id: @user.id)
     end

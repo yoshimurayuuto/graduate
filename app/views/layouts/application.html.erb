@@ -44,6 +44,11 @@
 
   <body>
   <%= analytics_init if Rails.env.production? %>
+  <% if current_user %>
+    <% if current_user.admin %>
+      <a  class="admin box9" href="/admin">管理者ページ</a>
+     <% end %>
+  <% end %>
     <% if user_signed_in? %>
       <p class="mypage box7"><%= link_to "マイページ", user_path(current_user.id) %></p>
       <div class="out box8"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>

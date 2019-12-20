@@ -20,11 +20,6 @@ feature 'Sign up' do
     expect(page).to have_content '確認メールを、登録したメールアドレス宛に送信しました。メールに記載されたリンクを開いてアカウントを有効にして下さい。'
     save_and_open_page
 
-  #   mail = ActionMailer::Base.deliveries.last
-  #   url = extract_confirmation_url(mail)
-  #   visit url
-  #   expect(page).to have_content 'Enter new password'
-
 user = User.last
 token = user.confirmation_token
 visit user_confirmation_path(confirmation_token: token)

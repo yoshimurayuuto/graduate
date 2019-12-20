@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# このRSpec.featureの右側に、「タスク管理機能」のように、テスト項目の名称を書きます（do ~ endでグループ化されています）
+
 RSpec.feature "ユーザー", type: :feature do
 
   background do
@@ -51,27 +51,3 @@ end
 
 
 
-# @password = "814@gmail.com"
-    #   @user = User.create(name: "000@gmail.com", email: "814@gmail.com", password: @password, password_confirmation: "814@gmail.com")
-    #   visit new_user_registration_path
-    #   # fill_in '名前', with: @user.name
-    #   fill_in 'メールアドレス', with: @user.email
-    #   fill_in 'パスワード', with: @password
-    #   fill_in '確認用パスワード', with: @password
-    #   click_on '新規登録'
-    #   click_on "Confirm my account" 
-    #   visit new_user_session_path
-    #   fill_in 'メールアドレス', with: @user.email
-    #   fill_in 'Password', with: @password
-    #   click_on 'ログイン'
-        # 新規作成
-        # visit new_user_registration_path
-        # fill_in "name", with: 'tanaka'
-        # fill_in 'メールアドレス', with: 'tanaka@sample.com'
-        # fill_in 'password', with: '000000'
-        # fill_in 'password_confirmation', with: '000000'
-        # save_and_open_page
-        # click_button "新規登録"
-        # save_and_open_page
-        # expect(page).to have_content "アカウント登録が完了しました。"
-        # 削除

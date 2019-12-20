@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "Articles", type: :feature do
 
 describe 'Articles' do
-
   background do
     @password = "814@gmail.com"
     @user = User.create(name: "000@gmail.com", email: "814@gmail.com", password: @password, password_confirmation: "814@gmail.com")

@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# このRSpec.featureの右側に、「タスク管理機能」のように、テスト項目の名称を書きます（do ~ endでグループ化されています）
 RSpec.feature "ユーザー", type: :feature do
 
 #Shareモデルバリデーションのテスト
@@ -23,13 +22,4 @@ RSpec.feature "ユーザー", type: :feature do
 
   end
 
-
-  
-
-
-      # visit users_path
-      # save_and_open_page
-      # click_button "つながりを解除"
-      # save_and_open_page
-      # expect(page).to have_content 'ユーザー一覧'
 

@@ -33,23 +33,9 @@ RSpec.feature "ユーザー", type: :feature do
       expect(page).to have_content 'ログインしました。'
    end
 
-
-  # scenario（itのalias）の中に、確認したい各項目のテストの処理を書きます。
-  # scenario "他のユーザーをフォローする" do
-
     it "自殺を減らすために私たちは何ができるかについて投稿" do
       visit shares_path
      Share.create(declaration: "aa", user_id: @user.id)
     end
   end
-
-
-  
-
-
-      # visit users_path
-      # save_and_open_page
-      # click_button "つながりを解除"
-      # save_and_open_page
-      # expect(page).to have_content 'ユーザー一覧'
 

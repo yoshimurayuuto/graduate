@@ -9,7 +9,7 @@
   <% else %>
     <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), method: :delete ) do |f| %>
       <button class="btn btn-primary">
-        <p class="iroha"><%= f.submit "つながりを解除" %></p>
+        <p class="iroha"><%= f.submit "フォローを解除" %></p>
       </button>
     <% end %>
   <% end %>

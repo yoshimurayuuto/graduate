@@ -10,7 +10,7 @@ feature 'Sign up' do
     body[/http[^"]+/]
   end
 
-  scenario 'メールアドレスのみでユーザー登録を行い、パスワードを後から設定する' do
+  scenario 'deviseのcomfirableモジュールを使用した新規登録' do
     visit new_user_registration_path
     expect(page).to have_http_status :ok
     fill_in 'メールアドレス', with: 'foo@example.com'

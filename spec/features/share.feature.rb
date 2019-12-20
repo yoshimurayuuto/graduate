@@ -22,19 +22,15 @@ RSpec.feature "ユーザー", type: :feature do
       fill_in 'password_confirmation', with: 'foo@example.com'
       click_button '新規登録'
       expect(page).to have_content '確認メールを、登録したメールアドレス宛に送信しました。メールに記載されたリンクを開いてアカウントを有効にして下さい。'
-      save_and_open_page
       user = User.last
       token = user.confirmation_token
       visit user_confirmation_path(confirmation_token: token)
       expect(page).to have_content 'メールアドレスの認証が完了しました。ログインしてください。'
-      save_and_open_page
       visit new_user_session_path
       fill_in 'メールアドレス', with: 'foo@example.com'
       fill_in 'パスワード', with: 'foo@example.com'
       click_button 'ログイン'
-      save_and_open_page
       expect(page).to have_content 'ログインしました。'
-      save_and_open_page
    end
 
 
@@ -45,8 +41,29 @@ RSpec.feature "ユーザー", type: :feature do
       visit shares_path
      Share.create(declaration: "aa", user_id: @user.id)
     end
+
+#Shareモデルバリデーションのテスト
+#内容をからのまま投稿したら無効
+
+    it "is invalid without a declaration" do
+      share = Share.new(declaration: nil)
+      share.valid?
+      expect(share.errors[:declaration]).to include("を入力してください")
+    end
+
+    #コメントモデルバリデーションテスト
+  #内容をからのまま投稿したら無効
+
+    it "is invalid without a content" do
+      comment = Comment.new(content: nil)
+      comment.valid?
+      expect(comment.errors[:content]).to include("を入力してください")
+    end
+
   end
 
+
+  
 
 
       # visit users_path

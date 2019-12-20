@@ -5,10 +5,20 @@
 <p class="midashi">フォロワー数:<%= @user.followers.count %></p>
 
 <% @user.following.each do |a| %>
-<p class="midashi">フォロー一覧:<%= a.name %></p>
+
+  <% if a.name.present? %>
+    <p class="midashi">自分がフォローした人:<%= a.name %></p>
+  <% else %>
+    <p class="midashi">自分がフォローした人:<%= a.username %></p>
+  <% end %>
 <% end %>
+
 <% @user.followers.each do |a| %>
-<p class="midashi">フォロワー一覧: <%= a.name %></p>
+  <% if a.name.present? %>
+    <p class="midashi">自分をフォローした人:<%= a.name %></p>
+  <% else %>
+  <p class="midashi">自分をフォローした人:<%= a.username %></p>
+  <% end %>
 <% end %>
 
 

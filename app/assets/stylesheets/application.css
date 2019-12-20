@@ -1567,11 +1567,38 @@ p{
 
 
 
+.mypage{
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+}
+
+.mypage::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+.mypage:hover::after{
+  width: 100%;
+}
 
 
-
-
-
+.box7 {
+  padding: 0.2em 0.7em;
+  margin: 0.6em 0;
+  color: #232323;
+  background: #e8faff;
+  border-left: solid 10px #eee9f0;
+}
 
 
 

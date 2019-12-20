@@ -22,34 +22,66 @@ RSpec.feature "ユーザー", type: :feature do
       fill_in 'password_confirmation', with: 'foo@example.com'
       click_button '新規登録'
       expect(page).to have_content '確認メールを、登録したメールアドレス宛に送信しました。メールに記載されたリンクを開いてアカウントを有効にして下さい。'
-      save_and_open_page
       user = User.last
       token = user.confirmation_token
       visit user_confirmation_path(confirmation_token: token)
       expect(page).to have_content 'メールアドレスの認証が完了しました。ログインしてください。'
-      save_and_open_page
       fill_in 'メールアドレス', with: 'foo@example.com'
       fill_in 'パスワード', with: 'foo@example.com'
       click_button 'ログイン'
       expect(page).to have_content 'ログインしました。'
-      save_and_open_page
    end
 
 
-  # scenario（itのalias）の中に、確認したい各項目のテストの処理を書きます。
-  # scenario "他のユーザーをフォローする" do
-    it "フォロー(フォロー解除機能)" do
-      visit users_path
-      save_and_open_page
-      click_button "フォロー"
-      save_and_open_page
-      visit users_path
-      save_and_open_page
-      click_button "つながりを解除"
-      save_and_open_page
-      expect(page).to have_content 'ユーザー一覧'
+   #Userモデルのバリデーションのテスト
+   #パスワードを記入しなかったら無効
+
+   it "is invalid without a password" do
+    user = User.new(password: nil)
+    user.valid?
+    expect(user.errors[:password]).to include("を入力してください")
   end
 
+
+  #パスワードと確認用パスワードが一致するか否かのテスト
+  context 'パスワードが一致する場合' do
+    user = User.new(email: 'test@test.com', password: 'hogehoge', password_confirmation: 'hogehoge')
+    user.valid?
+    it 'エラーにならない' do
+      expect(user.errors[:password_confirmation]).not_to be_present
+    end
+  end
+  context 'パスワードが一致しない場合' do
+    user = User.new(email: 'test@test.com', password: 'hogehoge', password_confirmation: 'hoge')
+    user.valid?
+    it 'エラーになる' do
+      expect(user.errors[:password_confirmation]).to be_present
+    end
+  end
+
+  #メールアドレスを記入しなかったら無効
+  it "is invalid without a email" do
+    user = User.new(email: nil)
+    user.valid?
+    expect(user.errors[:email]).to include("を入力してください")
+  end
+
+
+
+  #"他のユーザーをフォローする" 
+    it "フォロー(フォローを解除)" do
+      visit users_path
+      click_button "フォロー"
+      click_on "マイページ"
+      expect(page).to have_content "000@gmail.com"
+      visit users_path
+      click_button "フォローを解除"
+      save_and_open_page
+      click_on "マイページ"
+      save_and_open_page
+      expect(page).to have_content ""
+      save_and_open_page
+  end
 end
 
 

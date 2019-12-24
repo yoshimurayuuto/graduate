@@ -7,6 +7,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'delayed_job_active_record'
 gem 'rails_admin'
+gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
+gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 gem 'cancancan'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -16,7 +19,7 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'kaminari'
 gem 'google-analytics-rails'
-gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
+# gem 'therubyracer' # javascript runtime。lessをコンパイルするために必要
 gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'acts-as-taggable-on', '~> 6.0'
@@ -65,6 +68,11 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'capistrano', '3.6.0' # capistranoのツール一式
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
